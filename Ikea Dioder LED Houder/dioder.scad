@@ -29,7 +29,8 @@ intersection()
         translate([center_x, center_y, 0])
             cylinder(h = hor_thick, 
                 r1 = hole_rad, 
-                r2 = hole_rad);
+                r2 = hole_rad,
+        $fn = 100);
 
     }
     
