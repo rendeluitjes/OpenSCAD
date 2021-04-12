@@ -9,6 +9,7 @@ lip_thickness = 4;
 lip_height = 33;
 lip_screw_hole_x = 14;
 lip_screw_hole_spacing = 5;
+lip_thickness = 7;
 m3_rad = 3 / 2;
 
 $fn = 40;
@@ -36,10 +37,10 @@ translate([block_width, (block_height - lip_thickness) / 2, 0])
 {
     difference()
     {
-        cube([total_width - block_width, lip_thickness, lip_height]);
+        cube([total_width - block_width, lip_thickness, block_thickness]);
         
-        // Hole for screwing chain to, low.
-        translate([lip_screw_hole_x, 0, lip_screw_hole_spacing])
+        // Hole for screwing chain to, #1.
+        translate([6, 0, block_thickness / 2])
         {
             rotate(a = [-90, 0, 0])
             {
@@ -47,14 +48,13 @@ translate([block_width, (block_height - lip_thickness) / 2, 0])
             }
         }
 
-        // Hole for screwing chain to, high.
-        translate([lip_screw_hole_x, 0, lip_height - lip_screw_hole_spacing])
+        // Hole for screwing chain to, #2.
+        translate([12, 0, block_thickness / 2])
         {
             rotate(a = [-90, 0, 0])
             {
                 cylinder(h = block_thickness, r = m3_rad);
             }
         }
-
     }
 }
