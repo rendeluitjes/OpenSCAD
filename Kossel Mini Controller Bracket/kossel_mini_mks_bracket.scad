@@ -14,6 +14,7 @@ border = 10;
 backlip_angle = 30;
 base_x = 18;
 base_y = 4;
+top_ridge_correction = 1;
 
 difference()
 {
@@ -96,7 +97,7 @@ difference()
         {
             cube(size = [thickness, controller_height, lip_height]);
             // top ril.
-            translate([thickness, 0, lip_height - (alu_height / 2) - (ril_dim / 2)])
+            translate([thickness, 0, lip_height - (alu_height / 2) - (ril_dim / 2)+top_ridge_correction])
             {
                 cube(size = [ril_dim, controller_height, ril_dim]);
             }
@@ -130,7 +131,7 @@ difference()
     }
 
     // 15x15 alu screw hole highest.
-    translate([141 - thickness, controller_height / 2, lip_height - (alu_height / 2)])
+    translate([141 - thickness, controller_height / 2, lip_height - (alu_height / 2)+top_ridge_correction])
     {
         rotate(a = [0, 90, 0])
         {
@@ -152,7 +153,7 @@ translate([0, 100, 0])
                 cube(size = [backlip_width, thickness, lip_height]);
 
                 // top ril.
-                translate([0, thickness, lip_height - (alu_height / 2) - (ril_dim / 2)])
+                translate([0, thickness, lip_height - (alu_height / 2) - (ril_dim / 2)+top_ridge_correction])
                 {
                     cube(size = [backlip_width, ril_dim, ril_dim]);
                 }
@@ -171,7 +172,7 @@ translate([0, 100, 0])
             }
             
             // 15x15 alu screw hole highest.
-            translate([backlip_width / 2, 0, lip_height - (alu_height / 2)])
+            translate([backlip_width / 2, 0, lip_height - (alu_height / 2)+top_ridge_correction])
             {
                 rotate(a = [-90, 0, 0])
                 {
