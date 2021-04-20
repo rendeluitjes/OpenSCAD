@@ -9,7 +9,7 @@ x_carriage_space_hor = 17;
 x_carriage_space_vert = 23;
 hemera_hole_dist = 34;
 hemera_space = 4;
-$fn = 40;
+$fn = 10;
 endstop_notch_width = 15;
 endstop_notch_height = 25;
 endstop_x_offset = total_width - endstop_notch_width;
@@ -38,7 +38,17 @@ module bolt_hole()
 
 difference()
 {
-    cube([total_width, total_height, thickness]);
+    union()
+    {
+        cube([total_width, total_height, thickness]);
+        
+        // Extra extension on top for allowing this carriage to touch 
+        // the X-Max endstop.
+        translate([total_width - endstop_notch_width - endstop_notch_width, total_height, 0])
+        {
+            cube([endstop_notch_width, endstop_notch_height, thickness]);
+        }
+    }
     
     // Make space for Y-Max enstop to go deeper into the X-Carriage.
     translate([endstop_x_offset, endstop_y_offset, 0])

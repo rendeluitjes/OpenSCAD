@@ -3,7 +3,7 @@ mount_hole_hor_dist = 102;
 mount_hole_vert_dist = 76;
 $fn = 40;
 thickness = 5;
-ril_dim = 3;
+ril_dim = 2.5;
 alu_height = 15;
 lip_height = alu_height + 13 + alu_height;
 backlip_width = 45.1;
@@ -12,7 +12,7 @@ controller_width = 110;
 vert_border = 15;
 border = 10;
 backlip_angle = 30;
-base_x = 18;
+base_x = 3.5; // 18;
 base_y = 4;
 top_ridge_correction = 1;
 
@@ -39,11 +39,11 @@ difference()
                 // Ventilation cut-out.
                 polygon(
                     points = [
-                        [22, 10],
-                        [22, 74],
-                        [114, 74],
-                        [114, 10],
-                        [22, 10]
+                        [7, 10],
+                        [7, 74],
+                        [102, 74],
+                        [102, 10],
+                        [7, 10]
                         ]);
                   
             }
