@@ -53,12 +53,12 @@ module clip(height)
 }
 
 clip(100);
-translate([20, 0, 0])
-{
-    clip(150);
-}
-translate([40, 0, 0])
-{
-    clip(200);
-}
+//translate([20, 0, 0])
+//{
+//    clip(150);
+//}
+//translate([40, 0, 0])
+//{
+//    clip(200);
+//}
 
