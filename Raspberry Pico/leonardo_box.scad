@@ -1,23 +1,23 @@
-pico_width = 52;
-pico_depth = 22;
-pico_height = 5;
+leonardo_width = 70;
+leonardo_depth = 59;
+leonardo_height = 15;
 m3_diag = 3 / 2;
-nr_of_picos = 6;
+nr_of_leonardos = 4;
 spacing = 2;
 segments = 20;
-total_width = spacing + pico_width;
-total_depth = spacing + pico_depth + spacing;
-total_height = spacing + (nr_of_picos * (pico_height + spacing));
+total_width = spacing + leonardo_width;
+total_depth = spacing + leonardo_depth + spacing;
+total_height = spacing + (nr_of_leonardos * (leonardo_height + spacing));
 
 difference()
 {
     cube([total_width, total_depth, total_height]);
     
-    for (p = [0:nr_of_picos-1])
+    for (p = [0:nr_of_leonardos-1])
     {
-        translate([spacing, spacing, spacing + (p * (spacing + pico_height))])
+        translate([spacing, spacing, spacing + (p * (spacing + leonardo_height))])
         {
-            cube([pico_width, pico_depth, pico_height]);
+            cube([leonardo_width, leonardo_depth, leonardo_height]);
         }
     }
     
