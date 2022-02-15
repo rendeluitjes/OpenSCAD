@@ -1,23 +1,23 @@
-esp8266_width = 60;
-esp8266_depth = 35;
-esp8266_height = 20;
+avrnano_width = 44;
+avrnano_depth = 18.6;
+avrnano_height = 20;
 m3_diag = 3 / 2;
-nr_of_esp8266s = 8;
+nr_of_avrnanos = 4;
 spacing = 2;
 segments = 20;
-total_width = spacing + esp8266_width;
-total_depth = spacing + esp8266_depth + spacing;
-total_height = spacing + (nr_of_esp8266s * (esp8266_height + spacing));
+total_width = spacing + avrnano_width;
+total_depth = spacing + avrnano_depth + spacing;
+total_height = spacing + (nr_of_avrnanos * (avrnano_height + spacing));
 
 difference()
 {
     cube([total_width, total_depth, total_height]);
     
-    for (p = [0:nr_of_esp8266s-1])
+    for (p = [0:nr_of_avrnanos-1])
     {
-        translate([spacing, spacing, spacing + (p * (spacing + esp8266_height))])
+        translate([spacing, spacing, spacing + (p * (spacing + avrnano_height))])
         {
-            cube([esp8266_width, esp8266_depth, esp8266_height]);
+            cube([avrnano_width, avrnano_depth, avrnano_height]);
         }
     }
     
