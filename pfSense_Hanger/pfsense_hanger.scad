@@ -1,7 +1,7 @@
 thickness = 2;
 pfsense_width = 50;
-pfsense_depth = 175;
-pfsense_height = 37;
+pfsense_depth = 171;
+pfsense_height = 31;
 extra_width = 25;
 extra_depth = 25;
 gap = extra_depth / 2;
