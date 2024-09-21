@@ -28,20 +28,20 @@ module led(x = 0, y = 0, z = 0)
     translate([x, y, z])
     {
         // Led rand.
-        cylinder(h = led_rand_height, r1 = led_rand_diam / 2, r2 = led_rand_diam / 2);
+        cylinder(h = led_rand_height, r1 = led_rand_diam / 2, r2 = led_rand_diam / 2, $fn = 50);
         
     } 
         
     // Led body.
     translate([x, y, z + led_rand_height])
     {
-        cylinder(h = led_body_height, r1 = led_body_diam / 2, r2 = led_body_diam / 2);
+        cylinder(h = led_body_height, r1 = led_body_diam / 2, r2 = led_body_diam / 2, $fn = 50);
     }
         
     // lead beam.
     translate([x, y, z + led_rand_height + led_body_height])
     {
-        cylinder(h = led_beam_height, r1 = led_beam_diam / 2, r2 = led_beam_diam / 2);
+        cylinder(h = led_beam_height, r1 = led_beam_diam / 2, r2 = led_beam_diam / 2, $fn = 50);
     }
 
 }
