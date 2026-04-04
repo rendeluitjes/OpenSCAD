@@ -2,8 +2,8 @@ thickness = 2;
 margin = 7;
 $fn = 100;
 
-hor_gap = 107;
-ver_gap = 52;
+hor_gap = 105;
+ver_gap = 54;
 m4_rad = 4/2;
 
 difference()
